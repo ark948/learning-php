@@ -53,7 +53,7 @@ echo $str->convert('title');
 // Output: Hello There
 
 // The following example uses a variable function to call a static method:
-class Str
+class Str2
 {
 	private $s;
 
@@ -67,18 +67,18 @@ class Str
 		return $this->s;
 	}
 
-	public static function compare(Str $s1, Str $s2)
+	public static function compare(Str2 $s1, Str2 $s2)
 	{
 		return strcmp($s1, $s2);
 	}
 }
 
-$str1 = new Str('Hi');
-$str2 = new Str('Hi');
+$str1 = new Str2('Hi');
+$str2 = new Str2('Hi');
 
 $action = 'compare';
 
-echo Str::$action($str1, $str2); // 0
+echo Str2::$action($str1, $str2); // 0
 
 
 
