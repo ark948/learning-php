@@ -85,18 +85,18 @@ usort($group, fn($x, $y) => $x->name <=> $y->name);
 
 
 // The following example uses a static method of class as a callback for the usort() function
-class Person
-{
-    public $name;
+// class Person
+// {
+//     public $name;
 
-    public $age;
+//     public $age;
 
-    public function __construct(string $name, int $age)
-    {
-        $this->name = $name;
-        $this->age = $age;
-    }
-}
+//     public function __construct(string $name, int $age)
+//     {
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+// }
 
 class PersonComparer
 {
