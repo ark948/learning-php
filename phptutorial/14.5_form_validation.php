@@ -17,3 +17,13 @@
 
 // for example of validating floats
 // refer to froms/validate3.php
+
+
+// refer to form_validation folder for a complete example:
+
+    // index.php	.	Contain the main logic of the form
+    // header.php	inc	Contain the header code
+    // footer.php	inc	Contain the footer code
+    // get.php	inc	Contain the email subscription form
+    // post.php	inc	Contain the code for handling form submission
+    // style.css	css	Contain the CSS code
