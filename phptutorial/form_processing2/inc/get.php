@@ -12,6 +12,17 @@
             <label for="contact_<?php echo $key ?>"><?php echo $value ?></label>
         </div>
     <?php endforeach ?>
+
+    <div>
+        <label for="color">Background Color:</label>
+        <select name="color" id="color">
+            <option value="">--- Choose a color ---</option>
+            <option value="red">Red</option>
+            <option value="green" selected>Green</option>
+            <option value="blue">Blue</option>
+        </select>
+    </div>
+
     <div>
         <small class="error"><?php echo $errors['contact'] ?? '' ?></small>
     </div>

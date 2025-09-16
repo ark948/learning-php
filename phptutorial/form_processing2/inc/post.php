@@ -1,7 +1,6 @@
 <?php
 
 if (filter_has_var(INPUT_POST, 'contact')) {
-	
 	$contact = trim($_POST['contact']);
 
 	// check the selected value against the original values
@@ -22,4 +21,20 @@ if (filter_has_var(INPUT_POST, 'contact')) {
 		<a href="index.php">Back to the form</a>
 		html;
 	}
-} 
+}
+
+
+// aquire and process (clean) the select element
+if (filter_has_var(INPUT_POST, 'color')) { // checking the POST request to get the element with color as name
+	$color = htmlspecialchars($_POST['color']); // if exists, aquire it and escape it
+} else {
+	$color = null;
+}
+?>
+
+<?php if ($color): ?>
+    <p>You selected <span style="color:<?= $color ?>"><?= $color ?></span></p>
+	<p><a href="index.php">Back to the form</a></p>
+<?php else: ?>
+	<p>You did not select any color</p>
+<?php endif ?>
