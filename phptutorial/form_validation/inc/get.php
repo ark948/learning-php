@@ -12,6 +12,10 @@
             placeholder="Full Name" 
             value="<?php echo $inputs['name'] ?? '' ?>" 
             class="<?php echo isset($errors['name']) ? 'error' : ''  ?>">
+            <label>
+                <input type="checkbox" name="agree" value="yes" id="agree">
+            </label>
+
             <!-- ?? is the null coalescing operator, shows the first operand if exists and is not null -->
             <!-- otherwise the second operand -->
             <!-- if this input already exists, fill it (pre-populating the input so user doesn't have to enter again) -->

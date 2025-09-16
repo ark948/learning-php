@@ -40,6 +40,16 @@ if (filter_has_var(INPUT_POST, 'email')) {
     $errors['email'] = EMAIL_REQUIRED;
 }
 
+// the checkbox
+if (filter_has_var(INPUT_POST, 'agree')) {
+    $agree = trim($_POST['agree']);
+    if ($agree === 'yes') {
+        echo 'Thank you for joining us.';
+    }
+} else {
+    $errors['agree'] = 'To join us, you need to agree to the TOS';
+}
+
 ?>
 
 
