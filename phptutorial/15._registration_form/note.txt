@@ -1,0 +1,18 @@
+this lesson comes after 14.20_password_verify.php
+
+this project will contain a form that user will fill
+we sanitize and validate the user inputs
+if form data is not valid, show the form again with user inputs and errors
+if form is valid, insert the user data into the users database table, show a flash message, redirect the user to login.php
+the login form will be the next project
+
+
+
+config:	Store the configuration file such as database configuration
+public:	Store the public files accessed directly by the users
+src:	Store the source files that should not be exposed to the public
+src/inc:	Store the commonly included files such as the header and footer of a page
+src/libs:	Store the library files, e.g., validation, sanitization, etc.
+
+there are two register.php files, one in public, one in src
+this is to separate logic and view parts
