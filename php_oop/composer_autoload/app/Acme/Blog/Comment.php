@@ -1,5 +1,7 @@
 <?php
 
+namespace Acme\Blog;
+
 class Comment
 {
     private $comment;

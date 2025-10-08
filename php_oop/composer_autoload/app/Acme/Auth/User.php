@@ -1,6 +1,9 @@
 <?php
 
 
+namespace Acme\Auth;
+
+
 class User
 {
     private $username;

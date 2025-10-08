@@ -3,7 +3,8 @@
 
 require './app/bootstrap.php';
 
-$user = new User('admin', 'secure-password');
+use Acme\Auth\User as User;
+use Acme\Blog\Comment as Comment;
 
 // for small projects, using require_once is ok
 // when project gets more complicated, you can use spl_autoload_register
@@ -31,9 +32,6 @@ $user = new User('admin', 'secure-password');
 // from now on, whenever you have a new class in models dir, you need to run command dump-autoload again
 // otherwise you will get an error (if try to use a new class without running dump-autoload)
 
-$comment = new Comment('<h1>Hello</h1>');
-echo $comment->getComment();
-
 
 // PSR stands for PHP Standard Recommendation
 // PSR is a PHP specification published by the PHP Framework Interop Group or PHP-FIG
@@ -57,6 +55,14 @@ echo $comment->getComment();
 
 // models dir is deleted
 // User.php is under Acme/Auth folder
-// User class is namespaced with Acme/Auth
+// User class is namespaced with Acme\Auth
+// Comment class is namespaced under Acme\Blog
 // namespaces map to directory structure
-// 
+// composer.json is updated (the second backslash in Acme\ is used to escape the first one)
+// run the dump-autoload again
+// since User and Comment have namespaces, use the use directive statement in index.php
+
+$user = new User('admin', '$ecurePa$$w0rd1');
+
+$comment = new Comment('<h1>Hello</h1>');
+echo $comment->getComment();

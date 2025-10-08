@@ -1,5 +1,7 @@
 {
     "autoload": {
-        "classmap": ["app/models"]
+        "psr-4": {
+            "Acme\\":"app/Acme"
+        }
     }
 }
