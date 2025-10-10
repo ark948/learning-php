@@ -1,0 +1,8 @@
+PHP PDO is a database access layer that provides a uniform interface for working with databases
+
+PDO allows for working with any database that has a PDO driver available
+it relies on database-specific drivers
+such as PDO_MYSQL, PDO_PGSQL, PDO_OCI for oracle database
+
+Therefore, to use PDO for a specific database, you need to have a corresponding database driver available.
+
