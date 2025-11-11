@@ -6,14 +6,14 @@
 // it returns the number of affected rows on success, or false on failure
 
 $statements = [
-	'CREATE TABLE authors( 
+	'CREATE TABLE IF NOT EXISTS authors( 
         author_id   INT AUTO_INCREMENT,
         first_name  VARCHAR(100) NOT NULL, 
         middle_name VARCHAR(50) NULL, 
         last_name   VARCHAR(100) NULL,
         PRIMARY KEY(author_id)
     );',
-	'CREATE TABLE book_authors (
+	'CREATE TABLE IF NOT EXISTS book_authors (
         book_id   INT NOT NULL, 
         author_id INT NOT NULL, 
         PRIMARY KEY(book_id, author_id), 
@@ -33,5 +33,8 @@ $pdo = require 'connect.php';
 
 // execute sql statements (there are two of them)
 foreach ($statements as $statement) {
-    $pdo->exec($statement);
+    $response = $pdo->exec($statement);
+    if ($response) {
+        echo "success";
+    }
 }
