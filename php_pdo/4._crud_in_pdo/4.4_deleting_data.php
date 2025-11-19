@@ -32,9 +32,6 @@ if ($statement->execute()) {
 
 $publisher_id = 3;
 
-// connect to the database and select the publisher
-$pdo = require 'connect.php';
-
 $sql = 'DELETE FROM publishers
         WHERE publisher_id > :publisher_id';
 
