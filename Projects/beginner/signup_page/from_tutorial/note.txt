@@ -1,0 +1,4 @@
+source: https://www.geeksforgeeks.org/php/signup-form-using-php-and-mysql-database/
+
+
+<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?> put this in form action or the current file name will work as well
