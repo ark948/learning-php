@@ -6,13 +6,35 @@
  * $this keyword
  */
 
-
 /**
  * Encapsulation: bundling of data and methods into a single unit and restrict direct access to some of them to prevent potential damage.
  * 
  * why use encapsulation?
  * protect internal state of objects and data, prevent external code from being changed accidentally, provide controlled access to data
  * make code easier to maintain and debug
+ */
+
+/**
+ * Polymorphism: allows different classes to be treated as objects of a common parent.
+ * (same class can work with different data and act accordingly ?maybe)
+ */
+
+/**
+ * Abstract classes: classes that cannot be direclty used (they act as a blueprint to be implemented)
+ */
+
+/**
+ * Interface classes: represents a contract that classes should follow
+ * 
+ * they contain method declaration without implementation
+ * they cannot contain properties, all method must be public
+ * a class can implement multiple interfaces (unlike abstract classes)
+ */
+
+/**
+ * Abstract classes vs Interfaces
+ * Abstract classes -> share logic + enforce rules
+ * Interfaces -> enforce rules only
  */
 
 class DB {
