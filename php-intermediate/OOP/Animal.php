@@ -18,6 +18,15 @@ class Animal {
     public function speak($sound) {
         return ' ' . $this->name . ' ' . $sound;
     }
+
+    public function walk() {
+        return " can walk ";
+    }
+
+    final public function greet() {
+        // add final keyword to prevent overriding
+        return " this cannot be overridden ";
+    }
 }
 
 
@@ -35,7 +44,17 @@ class Dog extends Animal {
         // will override speak from parent, BUT number of params must be equal or more
         return "Fluffy is a Dog";
     }
+
+    public function walk() {
+        // overriding
+        return parent::walk() . " and bark. ";
+    }
+
+    // public function greet() {
+        // Cannot override final method Animal::greet()
+    // }
 }
 
 
 $dog = new Dog("Bobby", "Husky"); // both constructors will be triggered
+echo $dog->walk();
