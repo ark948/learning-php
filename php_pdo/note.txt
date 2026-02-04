@@ -6,3 +6,8 @@ such as PDO_MYSQL, PDO_PGSQL, PDO_OCI for oracle database
 
 Therefore, to use PDO for a specific database, you need to have a corresponding database driver available.
 
+
+SQL to grant priviliges of a database (all tables) to a user:
+GRANT ALL PRIVILIGES ON <databasename>.<tables> ON 'user'@'host';
+example:
+GRANT ALL PRIVILIGES ON chat_app_db.* ON 'project_tester'@'localhost';
