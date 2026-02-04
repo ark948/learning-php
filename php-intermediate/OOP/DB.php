@@ -6,12 +6,23 @@
  * $this keyword
  */
 
+
+/**
+ * Encapsulation: bundling of data and methods into a single unit and restrict direct access to some of them to prevent potential damage.
+ * 
+ * why use encapsulation?
+ * protect internal state of objects and data, prevent external code from being changed accidentally, provide controlled access to data
+ * make code easier to maintain and debug
+ */
+
 class DB {
     public $name = "Dude";
     public $email;
 
     private $phoneNumber = "010234256";
     private $phoneNumber2;
+    private $passCode; // prevent direct accesss using getter and setter
+    // attempting to directly access a private property will result in error: Cannot access private property
 
     public function __construct($name) {
         $this->name = $name;
@@ -21,6 +32,17 @@ class DB {
     public function __destruct() {
         // fires when object is destroyed (end of script is reached or manually using unset())
         echo "END OF SCRIPT. object is destroyed and so as the user.";
+    }
+
+    public function setPass($passCode, $newPass) {
+        if ($passCode !== "1234") {
+            return false;
+        }
+        $this->passCode = $newPass;
+    }
+
+    public function getPass() {
+        return $this->passCode;
     }
 
     public function printPassword($password) {
@@ -64,3 +86,5 @@ echo $db2->printInfo(7890);
 
 $db->setNumber(3478914);
 echo $db->getNumber();
+$db->setPass('1234', 'new-password1234');
+echo $db->getPass();
