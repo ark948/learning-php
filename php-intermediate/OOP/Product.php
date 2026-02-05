@@ -10,6 +10,18 @@
  * since php 8.2, Traits can have properties, but adding constructor is not advised
  */
 
+
+/**
+ * in php OOP, Namespaces are a way to group related classes, interfaces, functions and constants.
+ * 
+ * They help avoid naming collisions, group related code logically, and make large applications more manageable
+ * 
+ * IMPORTANT, namespaces must be the first thing in the file, before any use, class, or output
+ * only one namespace per file
+ * if not declared, global namespace is used
+ */
+
+
 trait MyTrait {
     public $name;
     public function DataCreation() {
