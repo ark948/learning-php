@@ -10,11 +10,23 @@
  */
 
 
+/**
+ * Class Constants: static properties that their value cannot be changed (public by default)
+ * 
+ * defined using the keyword const + no $ sign
+ * must be assigned an expression/value right away not a variable or function result
+ * cannot be changed after declaration
+ * accessible via ::
+ * can be inherited and overridden in child classes
+ */
+
+
 //  self cannot be used outside class body
 
 
 class User {
     public static $name;
+    public const string ROLE = "user"; // public and string are not required
     public static function printInfo($age) {
         return " user " . self::$name . " is $age years old ";
     }
@@ -22,5 +34,8 @@ class User {
 
 
 User::$name = "Nick Barns";
-
 echo User::printInfo(22);
+
+echo User::ROLE;
+
+// User::ROLE = "admin"; // Error
