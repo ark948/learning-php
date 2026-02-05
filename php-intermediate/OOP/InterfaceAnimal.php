@@ -7,9 +7,19 @@ interface AnimalInterface {
 }
 
 
-class Dog implements AnimalInterface {
+interface CanRunInterface {
+    public function isRunning();
+}
+
+
+class Dog implements AnimalInterface, CanRunInterface {
+    // class Dog implements multiple interfaces
     public function makeSound() {
-        return " my dog barks. ";
+        echo " my dog barks. ";
+    }
+
+    public function isRunning() {
+        return " dog can run. ";
     }
 }
 
@@ -21,8 +31,23 @@ class Cat implements AnimalInterface {
 }
 
 
-$dog = new Dog;
-echo $dog->makeSound();
+// a polymorphic function
+function triggerSound(AnimalInterface $animal) {
+    // type hinting
+    $animal->makeSound();
+}
 
-$cat = new Cat;
-echo $cat->makeSound();
+function triggerCanRun(CanRunInterface $runner) {
+    $runner->isRunning();
+}
+
+
+// $dog = new Dog;
+// echo $dog->makeSound();
+// echo $dog->isRunning();
+
+// $cat = new Cat;
+// echo $cat->makeSound();
+
+triggerSound(new Dog);
+triggerCanRun(new Dog);
