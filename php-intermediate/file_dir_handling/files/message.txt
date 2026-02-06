@@ -1,0 +1,2 @@
+Welcome to PHP!
+Told ya, it's gonna be fun. (This will be appended)
