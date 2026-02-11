@@ -9,8 +9,8 @@ try {
     $password   = "5G*[q5t)77yjdXux";
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);   
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "db ok" . PHP_EOL;
+    echo "connection.php ok" . PHP_EOL;
 } catch(PDOException $e) {
     echo $e->getMessage();
-    die("db error");
+    die("connection.php error");
 }
