@@ -10,6 +10,7 @@ $id = 1;
 $update = $conn->prepare("UPDATE posts SET title=:title WHERE id=:id");
 
 try {
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $update->execute(array(
         ":title" => $newTitle,
         ":id" => $id

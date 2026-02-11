@@ -5,8 +5,12 @@ require "connection.php";
 
 // $insert = $conn->query(
 //     "INSERT INTO posts (title, body) 
-//             VALUES ('post three', 'body three')"
+//      VALUES ('post three', 'body three')"
 // );
+
+
+// it is advisable not to use queries
+// use prepared statements instead
 
 
 // in some cases, data to insert are not known, or are to be aquired later
