@@ -1,0 +1,9 @@
+General security tips:
+- Never trust user input: Always validate and sanitize everything that comes from outside
+- Use HTTPS everywhere: encrypt communication to protect data in transit
+- Disable detailed error messages
+- Security is an ongoing progress: always audit, test and improve
+- Use frameworks (Laravel, Symfony, CodeIgniter)
+- Update to the latest version whether it's a lang or framework
+- Follow exploits websites
+- Use linux if you can
