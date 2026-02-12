@@ -1,0 +1,4 @@
+Options -Indexes
+
+# this is a message
+ErrorDocument 403 "You are not allowed here"
