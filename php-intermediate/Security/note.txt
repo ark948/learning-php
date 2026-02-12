@@ -7,3 +7,8 @@ General security tips:
 - Update to the latest version whether it's a lang or framework
 - Follow exploits websites
 - Use linux if you can
+
+Some useful links:
+https://owasp.org
+https://www.exploit-db.com/
+https://www.hackerone.com/blog
