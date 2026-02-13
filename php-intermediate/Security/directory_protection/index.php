@@ -1,0 +1,13 @@
+<?php
+
+// What are directory firewalls?
+/**
+ * In PHP apps, not all directories are meant to be accessible to the public.
+ * Some should only be used internally by PHP (config/, vendor/, includes/)
+ * 
+ * attackers can access these files and inflict damage or steal information.
+ * 
+ * directory access must be blocked or in another terms, the directory must be protected.
+ * in cpanel, or any other web hosting control panel softwares
+ * (it may have different titles in different control panels but the basic idea is the same)
+ */
