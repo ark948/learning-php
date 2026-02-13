@@ -1,5 +1,3 @@
-<?php
-
 // What are directory firewalls?
 /**
  * In PHP apps, not all directories are meant to be accessible to the public.
@@ -11,3 +9,5 @@
  * in cpanel, or any other web hosting control panel softwares
  * (it may have different titles in different control panels but the basic idea is the same)
  */
+
+ // https://www.infinityfree.com/

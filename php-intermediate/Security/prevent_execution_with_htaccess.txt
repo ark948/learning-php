@@ -1,0 +1,18 @@
+Prevent execution of specific files
+
+Some files should never be executed by the server, especially in upload directories.
+if an attacker uploads a php file in uploads/ folder, they could execute it and take over server.
+You want to allow storing of files (such as images, docs, pdfs), but block execution of scripts.
+
+
+- Using .htaccess (Apache)
+
+place this file in uploads/ folder
+
+# Prevent execution of PHP files in uploads/
+<FilesMatch "\.php$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+-> any .php file inside uploads/ folder will return 403, even if someone tries to run it.

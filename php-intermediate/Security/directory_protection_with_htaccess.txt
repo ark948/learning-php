@@ -1,0 +1,25 @@
+1. Why restrict by IP?
+sometimes it is required to only allow specific machines/networks to access a directory. (admin/ or config/)
+
+this prevents attackers from internet from even reaching the login page.
+and adds a layer of defense before authentication
+
+use cases:
+    develope/admin panel should be only reachable from your office ip.
+    ()
+    config/ or backups/ directories should be locked to specific trusted hosts.
+
+
+2. Using .htaccess (Apache)
+
+use this file to only allow specific IPs to access certain pages like /admin/
+
+sample htaccess directive:
+Order Deny,allow
+Deny from all
+Allow from 123.45.67.89
+
+Deny from all -> blocks everyone
+Allow from 123.45.67.89 -> only this ip address
+
+if anyone else tries, they get 403
