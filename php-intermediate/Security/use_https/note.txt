@@ -1,0 +1,33 @@
+what is https?
+
+
+http: hypter text transfer protocol (insecure, plain text)
+https: HTTP + SSL/TLS encryption
+it encrypts all communication between the browser and server
+
+http is insecure because data is sent in plain text
+attackers on the same network (wifi, ISP, etc.) can sniff traffic
+
+information such as usernames, passwords, cookies session ids, can be stolen
+
+- why https is secure?
+because data is encrypted with ssl/tls, attackers cannot read it.
+integrity: data cannot be modified in transit.
+authentication: the certificate proves your identity
+
+- PHP security benefits of HTTPS:
+1. protects login & registration forms, preventing credential theft
+2. secures cookies and sessiosn
+    without https, session hijacking (stolen PHPSESSID) is trivial
+    with https, use session_set_cookie_param(['secure' => true]); so cookies are only sent over https
+
+Summary for Your Lesson
+    1-HTTP sends data in plain text → attackers can steal credentials, sessions, and private info.
+    2-HTTPS encrypts, protects, and verifies integrity.
+    3-Always enforce HTTPS in production, especially for login, register, and sensitive data.
+    4-Combine HTTPS with secure cookies 
+
+? how to install ssl certificate in cpanel?
+
+some resources:
+https://letsencrypt.org/
