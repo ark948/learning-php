@@ -1,0 +1,14 @@
+Log files in a safe place, instead of showing errors to users (in prod).
+Do not let them pile up.
+
+Risks of not fixing logged errors:
+1. Security vulnerabilities stay open
+2. Leak of sensitive data
+    logs may contain file paths, database queries, even user data.
+    if server is misconfigured, hackers could gain access.
+3. Performance issues
+    Unfixed errors keep generating logs. This can fill up disk space and slow the server down.
+4. User experience problems
+    even if errors are hidden from users.
+    broken functionality means unhappy users.
+
