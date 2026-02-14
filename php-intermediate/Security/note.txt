@@ -9,7 +9,9 @@ General security tips:
 - Use linux if you can
 
 Some useful links:
-https://owasp.org
+https://owasp.org/
 https://www.exploit-db.com/
 https://www.hackerone.com/blog
 https://askapache.com/
+
+https://www.infinityfree.com/
