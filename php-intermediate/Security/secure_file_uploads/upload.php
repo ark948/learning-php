@@ -30,13 +30,37 @@ if (isset($_POST['submit'])) {
         echo "mime ok";
     }
 
-    /**
-     * How does PHP detects the true MIME of the uploaded file?
-     * It reads a specific pattern of bytes (may be referred to as Magic Byte) at the beginning of a file. (it's the file's internal signature or fingerprint)
-     * (it is embedded in the file's binary data)
-     * and matches it against a database of known signatures to identify the true type of data (MIME). (This is according to ChatGPT, modified for brevity by me)
-     * 
-     */
+
+    // Limiting file size
+    $fileSize = $_FILES['file']['size'];
+    if ($fileSize > 2*1024*1024) { // 2 MB Limit (1024 is a byte)
+        die("File too large.");
+    } else {
+        echo "file size ok";
+    }
+
+
+    // Renaming files
+    $uploadDir = __DIR__ . "/uploads/";
+    $tmpName = $_FILES['file']['tmp_name'];
+    $originalName = $_FILES['file']['name'];
+    
+    // extract the file extension
+    $extension = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
+
+    // generate a unique name
+    $newName = uniqid("file_", more_entropy: true) . "." . $extension;
+    
+    // full path to save the file
+    $destination = $uploadDir . $newName;
+
+    // move file from temp to uploads directory (using alternative syntax, just for fun)
+    if (move_uploaded_file(from: $tmpName, to: $destination)):
+        echo "File uploaded successfully as: " . htmlspecialchars($newName);
+    else:
+        echo "Error moving uploaded file.";
+    endif;
+
 }
 
 ?>

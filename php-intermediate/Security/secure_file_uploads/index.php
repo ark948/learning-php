@@ -20,4 +20,18 @@
 // 2. Validate the MIME type
 // attackers can change evil.php to nice.jpg
 // you must check the real content type
+    /**
+     * How does PHP detects the true MIME of the uploaded file?
+     * It reads a specific pattern of bytes (may be referred to as Magic Byte) at the beginning of a file. (it's the file's internal signature or fingerprint)
+     * (it is embedded in the file's binary data)
+     * and matches it against a database of known signatures to identify the true type of data (MIME). (This is according to ChatGPT, modified for brevity by me)
+     * 
+     */
 
+
+// 3. Limiting file size
+
+
+// 4. Renaming uploaded files
+// a. to prevent collision
+// b. to make it harder to guess file names (security through obsecurity or STO)
