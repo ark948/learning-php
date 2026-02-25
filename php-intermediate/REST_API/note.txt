@@ -1,1 +1,12 @@
-convention to name the controllers plural and models singular
+convention to name the controllers plural and models singular.
+
+REST_API> php -S localhost:8000
+
+using postman or another api client:
+send a GET to http://localhost:8000/api/read.php
+
+(myapi database and posts table must exist in your mysql, with sufficient permissions for user specified in dsn)
+
+help:
+to manually grant access, run this sql (in myapi database):
+GRANT SELECT, INSERT, DELETE, UPDATE ON myapi.posts TO 'myapi'@'localhost';

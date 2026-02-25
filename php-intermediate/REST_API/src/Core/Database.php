@@ -12,14 +12,12 @@ class Database {
         // $this is used to refer to member variables (use for non-static members)
         if (!self::$pdo) {
             try {
-                self::$pdo = new PDO("mysql:host=localhost;dbname=myapi;", "myapi", "123");
+                self::$pdo = new PDO(dsn: "mysql:host=localhost;dbname=myapi;", username: "myapi", password: "123");
             } catch (PDOException $e) {
                 die("something is wrong with DB connection." . $e->getMessage());
             }
-
         }
 
-        echo "Database OK";
         return self::$pdo;
     }
 }
