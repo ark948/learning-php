@@ -21,9 +21,9 @@ class PostsController
     }
 
     public function update($data, $id) {
-        $title = trim(htmlspecialchars($_POST['title']));
-        $body = trim(htmlspecialchars($_POST['body']));
-        $author = trim(htmlspecialchars($_POST['author']));
+        $title = trim(htmlspecialchars($data['title']));
+        $body = trim(htmlspecialchars($data['body']));
+        $author = trim(htmlspecialchars($data['author']));
 
         if ($title AND $body AND $author) {
             $updated = Post::updatePost($title, $body, $author, $id);

@@ -27,7 +27,7 @@ class Post {
 
     public static function updatePost(string $title, string $body, string $author, int $id): mixed {
         $pdo = Database::connect();
-        $updatePost = $pdo->prepare(query: "UPDATE posts SET title=? AND body=? AND author=? WHERE id=?");
+        $updatePost = $pdo->prepare(query: "UPDATE posts SET title=?, body=?, author=? WHERE id=?");
         return $updatePost->execute(params: [
             $title,
             $body,
