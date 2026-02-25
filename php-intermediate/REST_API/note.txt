@@ -10,3 +10,7 @@ send a GET to http://localhost:8000/api/read.php
 help:
 to manually grant access, run this sql (in myapi database):
 GRANT SELECT, INSERT, DELETE, UPDATE ON myapi.posts TO 'myapi'@'localhost';
+
+
+other routes:
+http://localhost:8000/api/read-single.php?id=1
