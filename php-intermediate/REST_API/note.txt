@@ -13,4 +13,5 @@ GRANT SELECT, INSERT, DELETE, UPDATE ON myapi.posts TO 'myapi'@'localhost';
 
 
 other routes:
-http://localhost:8000/api/read-single.php?id=1
+http://localhost:8000/api/read-single.php?id=1 (GET)
+http://localhost:8000/api/create.php (POST)
