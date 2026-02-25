@@ -14,7 +14,7 @@ class Post {
 
     public static function getSinglePost(int $id): mixed {
         $pdo = Database::connect();
-        $singlePost = $pdo->query("SELECT * FROM posts WHERE id=?");
+        $singlePost = $pdo->prepare("SELECT * FROM posts WHERE id=?");
         $singlePost->execute([$id]);
         return $singlePost->fetch(PDO::FETCH_ASSOC);
     }
@@ -38,7 +38,7 @@ class Post {
 
     public static function deletePost(int $id): mixed {
         $pdo = Database::connect();
-        $deletePost = $pdo->query("DELETE FROM posts WHERE id=?");
+        $deletePost = $pdo->prepare("DELETE FROM posts WHERE id=?");
         return $deletePost->execute([
             $id
         ]);
