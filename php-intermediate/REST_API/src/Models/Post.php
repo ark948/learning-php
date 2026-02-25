@@ -24,4 +24,23 @@ class Post {
         $createPost = $pdo->prepare(query: "INSERT INTO posts(title, body, author) VALUES(:title, :body, :author)");
         return $createPost->execute(params: [":title" => $title, ":body" => $body, ":author" => $author]);
     }
+
+    public static function updatePost(string $title, string $body, string $author, int $id): mixed {
+        $pdo = Database::connect();
+        $updatePost = $pdo->prepare(query: "UPDATE posts SET title=? AND body=? AND author=? WHERE id=?");
+        return $updatePost->execute(params: [
+            $title,
+            $body,
+            $author,
+            $id
+        ]);
+    }
+
+    public static function deletePost(int $id): mixed {
+        $pdo = Database::connect();
+        $deletePost = $pdo->query("DELETE FROM posts WHERE id=?");
+        return $deletePost->execute([
+            $id
+        ]);
+    }
 }
