@@ -37,5 +37,5 @@ spl_autoload_register(callback: function($class): void {
 
 // Database class should be loaded
 
-use App\Core\Database;
-Database::connect();
+// use App\Core\Database;
+// Database::connect();
