@@ -1,0 +1,1 @@
+convention to name the controllers plural and models singular
