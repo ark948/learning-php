@@ -23,6 +23,7 @@ if (!empty($allPosts)) {
 
         $arr["data"][] = $post_item;
     }
+    http_response_code(200);
     echo json_encode(value: $arr);
 } else {
     echo json_encode(value: [

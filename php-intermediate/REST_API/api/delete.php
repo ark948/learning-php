@@ -10,6 +10,7 @@ use App\Models\Post;
 $id = filter_input(type: INPUT_GET, var_name: "id", filter: FILTER_VALIDATE_INT);
 
 if (!$id) {
+    http_response_code(404);
     echo json_encode([
         "status" => false, 
         "message" => "there was an error."
@@ -29,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             ]);
         endif;
     } else {
+        http_response_code(404);
         echo json_encode([
             "status" => false,
             "message" => "No posts with given id."

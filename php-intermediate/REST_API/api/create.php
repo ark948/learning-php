@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             "data" => $data
         ]);
     else:
+        http_response_code(500);
         echo json_encode([
             "status" => false,
             "message" => "error, Post was not created",

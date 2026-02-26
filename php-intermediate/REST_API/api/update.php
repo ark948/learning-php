@@ -13,6 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
     $id = filter_var(value: $id, filter: FILTER_VALIDATE_INT);
     
     if (!$id) {
+        http_response_code(404);
         echo json_encode([
             "status" => false, 
             "message" => "there was an error."
@@ -36,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
             "data" => $data
         ]);
     else:
+        http_response_code(500);
         echo json_encode([
             "status" => false,
             "message" => "error, Post was not updated.",
