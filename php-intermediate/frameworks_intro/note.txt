@@ -1,0 +1,7 @@
+What is a framework?
+a structured foundation for building web applications.
+it provides reusable code, libraries, and tools.
+
+command to generate a laravel project:
+(composer and laravel installer must be installed)
+> composer create-project laravel/laravel <projectName>
