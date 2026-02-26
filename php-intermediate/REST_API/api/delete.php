@@ -36,5 +36,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
             "message" => "No posts with given id."
         ]);
     }
+} else {
+    http_response_code(405);
+    echo json_encode([
+        "status" => false,
+        "message" => "Only DELETE method is allowed.",
+    ]);
 }
 

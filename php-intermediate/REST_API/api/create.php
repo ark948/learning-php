@@ -23,6 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         "author" => $post->author
     ];
 
+    // validate required fields
+    foreach ($data as $key => $value) {
+        if (empty($valid)) {
+            echo json_encode(['status' => false, 'message' => "$key is required."]);
+            exit();
+        }
+    }
+
     if ($createNewPost->store($data)): // if the return value was true...
         http_response_code(201);
         echo json_encode([
@@ -37,4 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
             "message" => "error, Post was not created",
         ]);
     endif;
+} else {
+    http_response_code(405);
+    echo json_encode([
+        "status" => false,
+        "message" => "Only POST method is allowed.",
+    ]);
 }
