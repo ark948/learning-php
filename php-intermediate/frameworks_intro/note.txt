@@ -20,3 +20,17 @@ it provides reusable code, libraries, and tools.
 (Laravel infers the model name and database table automatically, Post model -> posts table)
 (it can also be set manually)
 > php artisan make:model <Model name>
+
+- to generate a new migration
+(migrations are like version control for database)
+(they manage the state of database's schema and changes with deleting data)
+> php artisan make:migration <migration_name_(snake_case is convention)>
+
+- to run migrations
+(first, check .env file and configure database)
+> php artisan migrate
+
+- to rollback the last migration
+> php artisan migrate:rollback
+(to rollback to a specific migration)
+> php artisan migrate:rollback --step=1 (this will rollback the last migration only)
