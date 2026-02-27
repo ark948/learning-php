@@ -273,5 +273,10 @@
         @if (Route::has('login'))
             <div class="h-14.5 hidden lg:block"></div>
         @endif
+
+        <form action="/submit" method="POST">
+            @csrf
+            <button class="btn" type="submit">Submit</button>
+        </form>
     </body>
 </html>
