@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h2>Home page</h2>
+    <p>Made by Laravel. {{ $name }}</p>
+
+    <div>
+        @foreach ($posts as $post)
+            <li>{{ $post }}</li>
+        @endforeach
+    </div>
+</body>
+</html>

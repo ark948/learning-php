@@ -12,3 +12,6 @@ it provides reusable code, libraries, and tools.
 
 - to run development server
 > php artisan serve
+
+- to generate a controller:
+> php artisan make:controller <controllName(PascalCase is the convention)>

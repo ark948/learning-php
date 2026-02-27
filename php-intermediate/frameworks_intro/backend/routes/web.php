@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -18,3 +19,7 @@ Route::get(uri: '/user/{id}', action: function($id): string {
 Route::get('/user/{name?}', function($name = 'Guest') {
     return "Hello, " . $name;
 });
+
+Route::get('/', [PostsController::class, 'home']);
+Route::get('/all', [PostsController::class, "allPosts"]);
+Route::get('/post/{id}', [PostsController::class, "singlePost"]);
