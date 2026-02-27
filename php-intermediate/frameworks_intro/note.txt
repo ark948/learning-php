@@ -15,3 +15,8 @@ it provides reusable code, libraries, and tools.
 
 - to generate a controller:
 > php artisan make:controller <controllName(PascalCase is the convention)>
+
+- to create a model:
+(Laravel infers the model name and database table automatically, Post model -> posts table)
+(it can also be set manually)
+> php artisan make:model <Model name>
