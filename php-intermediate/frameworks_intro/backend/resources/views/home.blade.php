@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <h2>Home page</h2>
-    <p>Made by Laravel. {{ $name }}</p>
+@extends('layouts.base')
 
+@section(section: 'title', content: "Title from child")
+
+@section('main')
+    [Child]
     <div>
         @foreach ($posts as $post)
             <li>{{ $post }}</li>
         @endforeach
     </div>
-</body>
-</html>
+    [Child]
+@endsection
